@@ -16,7 +16,6 @@ CREATE TABLE Cliente (
 -- Tabela Vendedor
 CREATE TABLE Vendedor (
     idVendedor INTEGER PRIMARY KEY UNIQUE,
-    numVendas INTEGER,
     dataInicio DATE,
     salario DECIMAL,
     idPessoa INTEGER,
@@ -37,10 +36,10 @@ CREATE TABLE Venda (
 
 -- Tabela Veiculo
 CREATE TABLE Veiculo (
-    matricula TEXT PRIMARY KEY UNIQUE CHECK (matricula LIKE 'XX-99-XX' OR matricula LIKE '99-XX-99'),
+    matricula TEXT PRIMARY KEY UNIQUE CHECK (matricula LIKE '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula LIKE '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula LIKE '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula LIKE '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]'),
     ano INTEGER,
     condicao TEXT,
-    garantia TEXT,
+    garantia INTEGER,
     modelo TEXT
 );
 
