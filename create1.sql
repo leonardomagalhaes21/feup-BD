@@ -3,14 +3,17 @@ CREATE TABLE Pessoa (
     idPessoa           INTEGER NOT NULL PRIMARY KEY,
     nome               TEXT NOT NULL,
     dataNascimento     DATE,
-    telemovel INTEGER 
+    telemovel          INTEGER,
+    CONSTRAINT IdPessoa_UNIQUE UNIQUE (idPessoa),
+    CONSTRAINT num_Telemovel UNIQUE CHECK (telemovel >= 100000000 AND telemovel <= 999999999)
 );
 
 -- Tabela Cliente
 CREATE TABLE Cliente (
     idCliente          INTEGER NOT NULL PRIMARY KEY,
     idPessoa           INTEGER,
-    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa)
+    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa),
+    CONSTRAINT IdCliente_UNIQUE UNIQUE (idCliente),
 );
 
 -- Tabela Vendedor
@@ -19,7 +22,8 @@ CREATE TABLE Vendedor (
     dataInicio         DATE,
     salario            DECIMAL,
     idPessoa           INTEGER,
-    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa)
+    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa), 
+    CONSTRAINT IdVendedor_UNIQUE UNIQUE (idVendedor)
 );
 
 -- Tabela Venda
@@ -31,7 +35,8 @@ CREATE TABLE Venda (
     idCliente          INTEGER,
     idVendedor         INTEGER,
     FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
-    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor)
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor),
+    CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda)
 );
 
 -- Tabela Veiculo
@@ -40,7 +45,8 @@ CREATE TABLE Veiculo (
     ano                INTEGER,
     condicao           TEXT,
     garantia           INTEGER,
-    modelo             TEXT
+    modelo             TEXT,
+    CONSTRAINT rest_Matricula UNIQUE CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]')
 );
 
 -- Tabela VeiculoVendedor (Tabela de associação entre Veiculo e Vendedor)
@@ -59,17 +65,10 @@ CREATE TABLE Manutencao (
     data               DATE,
     oficina            TEXT,
     FOREIGN KEY (matricula) REFERENCES Veiculo (matricula),
-    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente)
+    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
+    CONSTRAINT IdManuentacao_UNIQUE UNIQUE (idManutencao)
 );
 
---RESTRICTIONS
-    CONSTRAINT IdManuentacao_UNIQUE UNIQUE (idManutencao);
-    CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda);
-    CONSTRAINT IdVendedor_UNIQUE UNIQUE (idVendedor);
-    CONSTRAINT IdCliente_UNIQUE UNIQUE (idCliente);
-    CONSTRAINT IdPessoa_UNIQUE UNIQUE (idPessoa);
-    CONSTRAINT rest_Matricula UNIQUE CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]');
-    CONSTRAINT num_Telemovel UNIQUE CHECK (telemovel >= 100000000 AND telemovel <= 999999999);
 
 
 
