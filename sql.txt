@@ -1,21 +1,21 @@
 -- Tabela Pessoa
 CREATE TABLE Pessoa (
-    idPessoa INTEGER PRIMARY KEY,
+    idPessoa INTEGER PRIMARY KEY UNIQUE,
     nome TEXT NOT NULL,
     dataNascimento DATE,
-    telemovel INTEGER CHECK (numero >= 100000000 AND numero <= 999999999)
+    telemovel INTEGER CHECK (telemovel >= 100000000 AND telemovel <= 999999999)
 );
 
 -- Tabela Cliente
 CREATE TABLE Cliente (
-    idCliente INTEGER PRIMARY KEY,
+    idCliente INTEGER PRIMARY KEY UNIQUE,
     idPessoa INTEGER,
     FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa)
 );
 
 -- Tabela Vendedor
 CREATE TABLE Vendedor (
-    idVendedor INTEGER PRIMARY KEY,
+    idVendedor INTEGER PRIMARY KEY UNIQUE,
     numVendas INTEGER,
     dataInicio DATE,
     salario DECIMAL,
@@ -25,7 +25,7 @@ CREATE TABLE Vendedor (
 
 -- Tabela Venda
 CREATE TABLE Venda (
-    idVenda INTEGER PRIMARY KEY,
+    idVenda INTEGER PRIMARY KEY UNIQUE,
     data DATE,
     comissao DECIMAL,
     lucro DECIMAL,
@@ -37,7 +37,7 @@ CREATE TABLE Venda (
 
 -- Tabela Veiculo
 CREATE TABLE Veiculo (
-    matricula TEXT PRIMARY KEY CHECK (matricula LIKE 'XX-99-XX' OR matricula LIKE '99-XX-99')
+    matricula TEXT PRIMARY KEY UNIQUE CHECK (matricula LIKE 'XX-99-XX' OR matricula LIKE '99-XX-99')
     ano INTEGER,
     condicao TEXT,
     garantia TEXT,
@@ -54,7 +54,7 @@ CREATE TABLE VeiculoVendedor (
 
 -- Tabela Manutencao
 CREATE TABLE Manutencao (
-    idManutencao INTEGER PRIMARY KEY,
+    idManutencao INTEGER PRIMARY KEY UNIQUE,
     matricula TEXT,
     idCliente INTEGER,
     data DATE,
@@ -86,8 +86,8 @@ INSERT INTO Venda (data, comissao, lucro, idCliente, idVendedor) VALUES
 
 -- Inserir dados na tabela Veiculo
 INSERT INTO Veiculo (matricula, ano, condicao, garantia, modelo) VALUES
-    ('AB-13-CD', 2019, 'Bom', '1 ano', 'Sedan'),
-    ('XY-98-ZW', 2020, 'Excelente', '2 anos', 'SUV');
+    ('AB-13-CD', 2019, 'Usado', '1 ano', 'Sedan'),
+    ('XY-98-ZW', 2020, 'Novo', '2 anos', 'SUV');
 
 -- Inserir dados na tabela VeiculoVendedor
 INSERT INTO VeiculoVendedor (matricula, idVendedor) VALUES
