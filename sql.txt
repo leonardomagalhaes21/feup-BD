@@ -37,7 +37,7 @@ CREATE TABLE Venda (
 
 -- Tabela Veiculo
 CREATE TABLE Veiculo (
-    matricula TEXT PRIMARY KEY UNIQUE CHECK (matricula LIKE 'XX-99-XX' OR matricula LIKE '99-XX-99')
+    matricula TEXT PRIMARY KEY UNIQUE CHECK (matricula LIKE 'XX-99-XX' OR matricula LIKE '99-XX-99'),
     ano INTEGER,
     condicao TEXT,
     garantia TEXT,
@@ -60,7 +60,7 @@ CREATE TABLE Manutencao (
     data DATE,
     oficina TEXT,
     FOREIGN KEY (matricula) REFERENCES Veiculo (matricula),
-    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
+    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente)
 );
 
 --Popular
