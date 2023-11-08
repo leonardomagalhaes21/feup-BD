@@ -1,6 +1,6 @@
 PRAGMA	foreign_keys=ON;
 
---Popular
+-- Popular
 -- Inserir dados na tabela Pessoa
 INSERT INTO Pessoa (nome, dataNascimento, telemovel) VALUES
     ('Maria', '1990-03-15', 912345678),
@@ -13,8 +13,8 @@ INSERT INTO Cliente (idPessoa) VALUES
     (2);
 
 -- Inserir dados na tabela Vendedor
-INSERT INTO Vendedor (numVendas, dataInicio, salario, idPessoa) VALUES
-    (10, '2022-01-05', 2500.00, 3);
+INSERT INTO Vendedor (dataInicio, salario, idPessoa) VALUES
+    ('2022-01-05', 2500.00, 3);
 
 -- Inserir dados na tabela Venda
 INSERT INTO Venda (data, comissao, lucro, idCliente, idVendedor) VALUES
