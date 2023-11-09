@@ -117,8 +117,35 @@ INSERT INTO Venda (data, comissao, lucro, idCliente, idVendedor) VALUES
 
 -- Inserir dados na tabela Veiculo
 INSERT INTO Veiculo (matricula, ano, condicao, garantia, modelo) VALUES
-    ('AB-13-CD', 2019, 'Usado', '1 ano', 'Sedan'),
-    ('XY-98-ZW', 2020, 'Novo', '2 anos', 'SUV');
+    ('AB-13-CD', 2019, 'Usado', '1 ', 'Audi A3'),
+    ('BC-24-EF', 2020, 'Novo', '2 ', 'BMW 320i'),
+    ('DE-45-FG', 2018, 'Usado', '0 ', 'Mercedes-Benz C-Class'),
+    ('GH-56-IJ', 2021, 'Semi-novo', '1 ', 'Volkswagen Passat'),
+    ('KL-67-MN', 2017, 'Usado', '0 ', 'Ford Fusion'),
+    ('OP-78-QR', 2022, 'Novo', '2 ', 'Tesla Model S'),
+    ('ST-89-UV', 2016, 'Usado', '0 ', 'Honda Accord'),
+    ('YZ-99-ZA', 2019, 'Semi-novo', '1 ', 'Chevrolet Malibu'),
+    ('AA-00-BB', 2023, 'Novo', '2 ', 'Lexus ES'),
+    ('ZZ-98-YY', 2021, 'Usado', '0 ', 'Toyota Camry'),
+    ('CD-11-EF', 2020, 'Usado', '1 ', 'Audi A3'),
+    ('EF-22-GH', 2021, 'Novo', '2 ', 'BMW 320i'),
+    ('GH-33-IJ', 2018, 'Usado', '0 ', 'Mercedes-Benz C-Class'),
+    ('IJ-44-KL', 2022, 'Semi-novo', '1 ', 'Volkswagen Passat'),
+    ('KL-55-MN', 2017, 'Usado', '0 ', 'Ford Fusion'),
+    ('MN-66-OP', 2023, 'Novo', '2 ', 'Tesla Model S'),
+    ('OP-77-ST', 2021, 'Usado', '0 ', 'Honda Accord'),
+    ('UV-88-YZ', 2020, 'Semi-novo', '1 ', 'Chevrolet Malibu'),
+    ('YZ-99-ZA', 2023, 'Novo', '2 ', 'Lexus ES'),
+    ('ZA-11-BC', 2019, 'Usado', '1 ', 'Audi A4'),
+    ('BC-22-DE', 2020, 'Novo', '2 ', 'BMW 530i'),
+    ('DE-33-FG', 2018, 'Usado', '0 ', 'Mercedes-Benz E-Class'),
+    ('FG-44-GH', 2021, 'Semi-novo', '1 ', 'Volkswagen Jetta'),
+    ('GH-55-IJ', 2017, 'Usado', '0 ', 'Ford Mustang'),
+    ('IJ-66-KL', 2022, 'Novo', '2 ', 'Tesla Model 3'),
+    ('KL-77-MN', 2016, 'Usado', '0 ', 'Honda Civic'),
+    ('MN-88-OP', 2019, 'Usado', '1 ', 'Chevrolet Cruze'),
+    ('OP-99-ST', 2023, 'Novo', '2 ', 'Acura TLX'),
+    ('ST-00-UV', 2020, 'Usado', '0 ', 'Nissan Altima');
 
 -- Inserir dados na tabela VeiculoVendedor
 INSERT INTO VeiculoVendedor (matricula, idVendedor) VALUES
