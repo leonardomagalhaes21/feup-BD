@@ -112,8 +112,16 @@ INSERT INTO Vendedor (dataInicio, salario, idPessoa) VALUES
 
 -- Inserir dados na tabela Venda
 INSERT INTO Venda (data, comissao, lucro, idCliente, idVendedor) VALUES
-    ('2022-05-20', 100.50, 450.25, 1, 1),
-    ('2022-06-10', 75.25, 350.75, 2, 1);
+    ('2023-10-01', 85.50, 390.25, 16, 1),
+    ('2023-10-15', 100.75, 440.60, 17, 2),
+    ('2022-11-02', 115.20, 510.40, 18, 3),
+    ('2022-11-20', 83.90, 380.75, 19, 4),
+    ('2022-12-05', 110.25, 500.90, 20, 5),
+    ('2023-11-20', 90.40, 420.25, 21, 1),
+    ('2022-01-10', 97.75, 440.60, 22, 2),
+    ('2023-01-25', 105.20, 470.40, 23, 3),
+    ('2022-02-15', 80.90, 370.75, 24, 4),
+    ('2023-02-28', 93.25, 430.90, 25, 5);
 
 -- Inserir dados na tabela Veiculo
 INSERT INTO Veiculo (matricula, ano, condicao, garantia, modelo) VALUES
