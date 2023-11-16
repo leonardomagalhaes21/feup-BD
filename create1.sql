@@ -68,5 +68,26 @@ CREATE TABLE Manutencao (
     CONSTRAINT IdManuentacao_UNIQUE UNIQUE (idManutencao)
 );
 
+CREATE TABLE Pagamento (
+    idPagamento        INTEGER NOT NULL PRIMARY KEY,
+    metodoPagamento    TEXT,
+    data               DATE,
+    valor              DECIMAL,
+    matricula          TEXT,
+    FOREIGN KEY (matricula) REFERENCES Veiculo (matricula),
+    CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
+);
+    
+
+
+
+
+
+
+
+
+
+    
+
 
 
