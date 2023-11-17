@@ -3,7 +3,10 @@ CREATE TABLE Pessoa (
     idPessoa           INTEGER NOT NULL PRIMARY KEY,
     nome               TEXT NOT NULL,
     dataNascimento     DATE,
-    telemovel          INTEGER
+    telemovel          INTEGER,
+    CONSTRAINT IdPessoa_UNIQUE UNIQUE (idPessoa),
+    CONSTRAINT Telemovel_UNIQUE UNIQUE (telemovel),
+    CONSTRAINT num_Telemovel CHECK (telemovel >= 100000000 AND telemovel <= 999999999)
 );
 
 -- Tabela Cliente
@@ -31,7 +34,9 @@ CREATE TABLE Veiculo (
     garantia           INTEGER,
     modelo             TEXT,
     idMarca            INTEGER,
-    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca)
+    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca),
+    CONSTRAINT Matricula_UNIQUE UNIQUE (matricula),
+    CONSTRAINT rest_Matricula CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]')
 );
 
 -- Tabela Pagamento
@@ -40,8 +45,7 @@ CREATE TABLE Pagamento (
     metodoPagamento    TEXT,
     data               DATE,
     valor              DECIMAL,
-    idVenda            TEXT,
-    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda)
+    CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
 );
 
 -- Tabela Venda
@@ -52,12 +56,13 @@ CREATE TABLE Venda (
     lucro              DECIMAL,
     idCliente          INTEGER,
     idVendedor         INTEGER,
-    idVeiculo          INTEGER,
+    matricula          INTEGER,
     idPagamento        INTEGER,
     FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor),
     FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento),
-    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo)
+    FOREIGN KEY (matricula) REFERENCES Veiculo (matricula),
+    CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda)
 );
 
 --Tabela Marca
@@ -92,3 +97,16 @@ CREATE TABLE RepresentanteVendedor (
     FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante),
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor)
 );
+
+
+
+
+
+
+
+
+
+    
+
+
+

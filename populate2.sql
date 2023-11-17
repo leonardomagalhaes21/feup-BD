@@ -113,6 +113,29 @@ VALUES
     (4, '2023-03-02', 10, 5200.00, 4),
     (5, '2023-06-18', 10, 4700.50, 5);
 
+-- Inserir dados na tabela Marca
+INSERT INTO Marca (idMarca, nomeMarca, pais, ano)
+VALUES
+    (1, 'Ferrari', 'Itália', 1929),
+    (2, 'Porsche', 'Alemanha', 1931),
+    (3, 'Lamborghini', 'Itália', 1963),
+    (4, 'Chevrolet', 'EUA', 1911),
+    (5, 'Jaguar', 'Reino Unido', 1922),
+    (6, 'Mercedes-Benz', 'Alemanha', 1924),
+    (7, 'Aston Martin', 'Reino Unido', 1913),
+    (8, 'Rolls-Royce', 'Reino Unido', 1904),
+    (9, 'Ford', 'EUA', 1903),
+    (10, 'Toyota', 'Japão', 1937),
+    (11, 'Honda', 'Japão', 1948),
+    (12, 'Volkswagen', 'Alemanha', 1937),
+    (13, 'BMW', 'Alemanha', 1916),
+    (14, 'Nissan', 'Japão',1933),
+    (15, 'Audi', 'Alemanha', 1909),
+    (16, 'Lexus', 'Japão', 1989),
+    (17, 'Tesla', 'EUA', 2003),
+    (18, 'Mini', 'Alemanha', 1959),
+    (19, 'Land Rover', 'Reino Unido', 1978);
+
 -- Inserir dados na tabela Veiculo
 INSERT INTO Veiculo (matricula, ano, condicao, garantia, modelo, idMarca)
 VALUES
@@ -217,62 +240,62 @@ VALUES
     ('AJ-31-LA', 2020, 'Semi-Novo', 24, 'Huracan', 3),
     ('AK-32-PA', 2021, 'Semi-Novo', 18, 'TT RS', 15);
 
--- Inserir dados na tabela Pagamento
-INSERT INTO Pagamento (idPagamento, metodoPagamento, data, valor, idVenda)
+    -- Inserir dados na tabela Pagamento
+INSERT INTO Pagamento (idPagamento, metodoPagamento, data, valor)
 VALUES
-    (1, 'Cartão', '2023-11-05', 10000.00, 1),
-    (2, 'Transferência', '2023-11-20', 32000.00, 2),
-    (3, 'Dinheiro', '2023-11-03', 11000.00, 3),
-    (4, 'Cartão', '2023-11-15', 7500.00, 4),
-    (5, 'Transferência', '2023-11-10', 35000.00, 5),
-    (6, 'Dinheiro', '2023-11-25', 8000.00, 6),
-    (7, 'Cartão', '2023-11-10', 13000.00, 7),
-    (8, 'Transferência', '2023-11-22', 22000.00, 8),
-    (9, 'Dinheiro', '2023-11-10', 40000.00, 9),
-    (10, 'Cartão', '2023-11-25', 15000.00, 10),
-    (11, 'Cartão', '2023-11-10', 9500.00, 11),
-    (12, 'Transferência', '2023-11-25', 22000.00, 12),
-    (13, 'Dinheiro', '2023-11-10', 9000.00, 13),
-    (14, 'Cheque', '2023-11-25', 39000.00, 14),
-    (15, 'Cheque', '2023-11-10', 6500.00, 15),
-    (16, 'Cartão', '2023-11-25', 19000.00, 16),
-    (17, 'Transferência', '2023-11-10', 27000.00, 17),
-    (18, 'Dinheiro', '2023-11-25', 42000.00, 18),
-    (19, 'Cheque', '2023-11-10', 52000.00, 19),
-    (20, 'Dinheiro', '2023-11-25', 4000.00, 20),
-    (21, 'Cartão', '2023-11-10', 62000.00, 21),
-    (22, 'Transferência', '2023-11-15', 39600.00, 22),
-    (23, 'Dinheiro', '2023-11-20', 30000.00, 23),
-    (24, 'Cheque', '2023-11-25', 30000.00, 24),
-    (25, 'Cartão', '2023-11-30', 30000.00, 25),
-    (26, 'Transferência', '2023-11-05', 27000.00, 26),
-    (27, 'Dinheiro', '2023-11-10', 26000.00, 27),
-    (28, 'Cheque', '2023-11-15', 40000.00, 28),
-    (29, 'Cartão', '2023-11-20', 44000.00, 29),
-    (30, 'Transferência', '2023-11-25', 24000.00, 30),
-    (31, 'Dinheiro', '2023-11-13', 112000.00, 31),
-    (32, 'Cheque', '2023-11-17', 39000.00, 32),
-    (33, 'Cheque', '2023-11-23', 27000.00, 33),
-    (34, 'Cartão', '2023-11-22', 47000.00, 34),
-    (35, 'Transferência', '2023-11-30', 72200.00, 35),
-    (36, 'Dinheiro', '2023-11-03', 80000.00, 36),
-    (37, 'Cartão', '2023-11-19', 180000.00, 37),
-    (38, 'Transferência', '2023-11-12', 170000.00, 38),
-    (39, 'Dinheiro', '2023-11-21', 130000.00, 39),
-    (40, 'Cartão', '2023-11-23', 34000.00, 40),
-    (41, 'Dinheiro', '2023-11-12', 50000.00, 41),
-    (42, 'Cheque', '2023-11-18', 28000.00, 42),
-    (43, 'Dinheiro', '2023-11-28', 32000.00, 43),
-    (44, 'Cartão', '2023-11-20', 38000.00, 44),
-    (45, 'Transferência', '2023-11-30', 26000.00, 45),
-    (46, 'Dinheiro', '2023-11-04', 26000.00, 46),
-    (47, 'Cheque', '2023-11-14', 90000.00, 47),
-    (48, 'Cartão', '2023-11-14', 38000.00, 48),
-    (49, 'Cartão', '2023-11-22', 30000.00, 49),
-    (50, 'Transferência', '2023-11-22', 67000.00, 50);
+    (1, 'Cartão', '2023-11-05', 10000.00),
+    (2, 'Transferência', '2023-11-20', 32000.00),
+    (3, 'Dinheiro', '2023-11-03', 11000.00),
+    (4, 'Cartão', '2023-11-15', 7500.00),
+    (5, 'Transferência', '2023-11-10', 35000.00),
+    (6, 'Dinheiro', '2023-11-25', 8000.00),
+    (7, 'Cartão', '2023-11-10', 13000.00),
+    (8, 'Transferência', '2023-11-22', 22000.00),
+    (9, 'Dinheiro', '2023-11-10', 40000.00),
+    (10, 'Cartão', '2023-11-25', 15000.00),
+    (11, 'Cartão', '2023-11-10', 9500.00),
+    (12, 'Transferência', '2023-11-25', 22000.00),
+    (13, 'Dinheiro', '2023-11-10', 9000.00),
+    (14, 'Cheque', '2023-11-25', 39000.00),
+    (15, 'Cheque', '2023-11-10', 6500.00),
+    (16, 'Cartão', '2023-11-25', 19000.00),
+    (17, 'Transferência', '2023-11-10', 27000.00),
+    (18, 'Dinheiro', '2023-11-25', 42000.00),
+    (19, 'Cheque', '2023-11-10', 52000.00),
+    (20, 'Dinheiro', '2023-11-25', 4000.00),
+    (21, 'Cartão', '2023-11-10', 62000.00),
+    (22, 'Transferência', '2023-11-15', 39600.00),
+    (23, 'Dinheiro', '2023-11-20', 30000.00),
+    (24, 'Cheque', '2023-11-25', 30000.00),
+    (25, 'Cartão', '2023-11-30', 30000.00),
+    (26, 'Transferência', '2023-11-05', 27000.00),
+    (27, 'Dinheiro', '2023-11-10', 26000.00),
+    (28, 'Cheque', '2023-11-15', 40000.00),
+    (29, 'Cartão', '2023-11-20', 44000.00),
+    (30, 'Transferência', '2023-11-25', 24000.00),
+    (31, 'Dinheiro', '2023-11-13', 112000.00),
+    (32, 'Cheque', '2023-11-17', 39000.00),
+    (33, 'Cheque', '2023-11-23', 27000.00),
+    (34, 'Cartão', '2023-11-22', 47000.00),
+    (35, 'Transferência', '2023-11-30', 72200.00),
+    (36, 'Dinheiro', '2023-11-03', 80000.00),
+    (37, 'Cartão', '2023-11-19', 180000.00),
+    (38, 'Transferência', '2023-11-12', 170000.00),
+    (39, 'Dinheiro', '2023-11-21', 130000.00),
+    (40, 'Cartão', '2023-11-23', 34000.00),
+    (41, 'Dinheiro', '2023-11-12', 50000.00),
+    (42, 'Cheque', '2023-11-18', 28000.00),
+    (43, 'Dinheiro', '2023-11-28', 32000.00),
+    (44, 'Cartão', '2023-11-20', 38000.00),
+    (45, 'Transferência', '2023-11-30', 26000.00),
+    (46, 'Dinheiro', '2023-11-04', 26000.00),
+    (47, 'Cheque', '2023-11-14', 90000.00),
+    (48, 'Cartão', '2023-11-14', 38000.00),
+    (49, 'Cartão', '2023-11-22', 30000.00),
+    (50, 'Transferência', '2023-11-22', 67000.00);
 
 -- Inserir dados na tabela Venda
-INSERT INTO Venda (idVenda, data, comissao, lucro, idCliente, idVendedor, idVeiculo, idPagamento)
+INSERT INTO Venda (idVenda, data, comissao, lucro, idCliente, idVendedor, matricula, idPagamento)
 VALUES
     (1, '2023-11-05', 2000.00, 3000.00, 1, 1, '09-UU-20', 1),
     (2, '2023-11-20', 2500.00, 4500.00, 2, 2, '14-VV-18', 2),
@@ -324,30 +347,6 @@ VALUES
     (48, '2023-11-14', 1900.00, 4800.00, 20, 3, 'AY-21-MR', 48),
     (49, '2023-11-22', 2200.00, 5200.00, 30, 4, 'AZ-22-SA', 49),
     (50, '2023-11-22', 2500.00, 5800.00, 40, 5, 'AA-23-MA', 50);
-
--- Inserir dados na tabela Marca
-INSERT INTO Marca (idMarca, nomeMarca, pais, ano)
-VALUES
-    (1, 'Ferrari', 'Itália', 1929),
-    (2, 'Porsche', 'Alemanha', 1931),
-    (3, 'Lamborghini', 'Itália', 1963),
-    (4, 'Chevrolet', 'EUA', 1911),
-    (5, 'Jaguar', 'Reino Unido', 1922),
-    (6, 'Mercedes-Benz', 'Alemanha', 1924),
-    (7, 'Aston Martin', 'Reino Unido', 1913),
-    (8, 'Rolls-Royce', 'Reino Unido', 1904),
-    (9, 'Ford', 'EUA', 1903),
-    (10, 'Toyota', 'Japão', 1937),
-    (11, 'Honda', 'Japão', 1948),
-    (12, 'Volkswagen', 'Alemanha', 1937),
-    (13, 'BMW', 'Alemanha', 1916),
-    (14, 'Nissan', 'Japão',1933),
-    (15, 'Audi', 'Alemanha', 1909),
-    (16, 'Lexus', 'Japão', 1989),
-    (17, 'Tesla', 'EUA', 2003),
-    (18, 'Mini', 'Alemanha', 1959),
-    (19, 'Land Rover', 'Reino Unido', 1978);
-    
 
 -- Inserir dados na tabela Representante
 INSERT INTO Representante (idRepresentante, nomeRepresentante, dataInicio)
