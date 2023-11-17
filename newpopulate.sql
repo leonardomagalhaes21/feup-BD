@@ -285,25 +285,25 @@ VALUES
 -- Inserir dados na tabela Marca
 INSERT INTO Marca (idMarca, nomeMarca, pais, ano)
 VALUES
-    (1, 'Ferrari', Itália, 1929),
-    (2, 'Porsche', Alemanha, 1931),
-    (3, 'Lamborghini', Itália, 1963),
-    (4, 'Chevrolet', EUA, 1911),
-    (5, 'Jaguar', Reino Unido, 1922),
-    (6, 'Mercedes-Benz', Alemanha, 1924),
-    (7, 'Aston Martin', Reino Unido, 1913),
-    (8, 'Rolls-Royce', Reino Unido, 1904),
-    (9, 'Ford', EUA, 1903),
-    (10, 'Toyota', Japão, 1937),
-    (11, 'Honda', Japão, 1948),
-    (12, 'Volkswagen', Alemanha, 1937),
-    (13, 'BMW', Alemanha, 1916),
-    (14, 'Nissan', Japão,1933),
-    (15, 'Audi', Alemanha, 1909),
-    (16, 'Lexus', Japão, 1989),
-    (17, 'Tesla', EUA, 2003),
-    (18, 'Mini', Alemanha, 1959),
-    (19, 'Land Rover', Reino Unido, 1978);
+    (1, 'Ferrari', 'Itália', 1929),
+    (2, 'Porsche', 'Alemanha', 1931),
+    (3, 'Lamborghini', 'Itália', 1963),
+    (4, 'Chevrolet', 'EUA', 1911),
+    (5, 'Jaguar', 'Reino Unido', 1922),
+    (6, 'Mercedes-Benz', 'Alemanha', 1924),
+    (7, 'Aston Martin', 'Reino Unido', 1913),
+    (8, 'Rolls-Royce', 'Reino Unido', 1904),
+    (9, 'Ford', 'EUA', 1903),
+    (10, 'Toyota', 'Japão', 1937),
+    (11, 'Honda', 'Japão', 1948),
+    (12, 'Volkswagen', 'Alemanha', 1937),
+    (13, 'BMW', 'Alemanha', 1916),
+    (14, 'Nissan', 'Japão',1933),
+    (15, 'Audi', 'Alemanha', 1909),
+    (16, 'Lexus', 'Japão', 1989),
+    (17, 'Tesla', 'EUA', 2003),
+    (18, 'Mini', 'Alemanha', 1959),
+    (19, 'Land Rover', 'Reino Unido', 1978);
     
 
 -- Inserir dados na tabela Representante
@@ -339,7 +339,7 @@ VALUES
     (7, 7),
     (8, 8),
     (9, 9),
-    (10, 10);
+    (10, 10),
     (11, 11),
     (12, 12),
     (13, 13),
