@@ -3,10 +3,7 @@ CREATE TABLE Pessoa (
     idPessoa           INTEGER NOT NULL PRIMARY KEY,
     nome               TEXT NOT NULL,
     dataNascimento     DATE,
-    telemovel          INTEGER,
-    CONSTRAINT IdPessoa_UNIQUE UNIQUE (idPessoa),
-    CONSTRAINT Telemovel_UNIQUE UNIQUE (telemovel),
-    CONSTRAINT num_Telemovel CHECK (telemovel >= 100000000 AND telemovel <= 999999999)
+    telemovel          INTEGER
 );
 
 -- Tabela Cliente
@@ -35,8 +32,6 @@ CREATE TABLE Veiculo (
     modelo             TEXT,
     idMarca            INTEGER,
     FOREIGN KEY (idMarca) REFERENCES Marca (idMarca)
-    CONSTRAINT Matricula_UNIQUE UNIQUE (matricula),
-    CONSTRAINT rest_Matricula CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]')
 );
 
 -- Tabela Pagamento
@@ -46,8 +41,7 @@ CREATE TABLE Pagamento (
     data               DATE,
     valor              DECIMAL,
     idVenda            TEXT,
-    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda),
-    CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
+    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda)
 );
 
 -- Tabela Venda
@@ -63,8 +57,7 @@ CREATE TABLE Venda (
     FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor),
     FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento),
-    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo),
-    CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda)
+    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo)
 );
 
 --Tabela Marca
