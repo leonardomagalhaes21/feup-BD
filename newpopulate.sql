@@ -1,36 +1,36 @@
 -- Inserir dados na tabela Pessoa
 INSERT INTO Pessoa (idPessoa, nome, dataNascimento, telemovel)
 VALUES 
-    (1, 'João Silva', '1990-01-01', 123456789),
-    (2, 'Maria Oliveira', '1985-05-15', 987654321),
-    (3, 'Carlos Santos', '1995-03-20', 111222333),
-    (4, 'Ana Pereira', '1988-08-10', 999888777),
-    (5, 'Pedro Almeida', '1980-12-05', 444555666),
-    (6, 'Catarina Mendes', '1993-06-25', 666777888),
-    (7, 'Rui Costa', '1982-09-18', 333222111),
-    (8, 'Sofia Ferreira', '1998-04-30', 777888999),
-    (9, 'Miguel Oliveira', '1996-11-12', 555444333),
-    (10, 'Inês Rodrigues', '1987-07-08', 222111000);
+    (1, 'João Silva', '1990-01-01', 963647906),
+    (2, 'Maria Oliveira', '1985-05-15', 917654321),
+    (3, 'Carlos Santos', '1995-03-20', 911249303),
+    (4, 'Ana Pereira', '1988-08-10', 936008687),
+    (5, 'Pedro Almeida', '1980-12-05', 914552231),
+    (6, 'Catarina Mendes', '1993-06-25', 960572847),
+    (7, 'Rui Costa', '1982-09-18', 932174091),
+    (8, 'Sofia Ferreira', '1998-04-30', 917335899),
+    (9, 'Miguel Oliveira', '1996-11-12', 914290570),
+    (10, 'Inês Rodrigues', '1987-07-08', 918137000);
     (11, 'Joana Ferreira', '1990-08-15', 912345678),
-    (12, 'António Silva', '1985-05-20', 966666666),
-    (13, 'Carla Oliveira', '1978-11-30', 923456789),
+    (12, 'António Silva', '1985-05-20', 966274609),
+    (13, 'Carla Oliveira', '1978-11-30', 933456789),
     (14, 'Ricardo Santos', '1992-04-25', 918765432),
     (15, 'Margarida Costa', '1980-09-05', 965432109),
     (16, 'Hugo Martins', '1975-02-10', 934567890),
-    (17, 'Sofia Pereira', '1987-07-22', 977654321),
+    (17, 'Sofia Pereira', '1987-07-22', 917654321),
     (18, 'Paulo Alves', '1983-12-18', 910123456),
     (19, 'Ana Sousa', '1995-03-08', 932109876),
-    (20, 'Jorge Oliveira', '1972-06-14', 944444444);
-    (21, 'Joana Silva', '1990-08-15', 912345678),
-    (22, 'Hugo Santos', '1985-05-20', 965432187),
-    (23, 'Catarina Ferreira', '1998-11-10', 922345678),
-    (24, 'Ricardo Oliveira', '1979-03-25', 917654321),
-    (25, 'Inês Martins', '1987-09-02', 968765432),
-    (26, 'Carlos Almeida', '1995-07-14', 926543219),
-    (27, 'Sofia Pereira', '1980-12-30', 911234567),
+    (20, 'Jorge Oliveira', '1972-06-14', 912708544);
+    (21, 'Joana Silva', '1990-08-15', 917325278),
+    (22, 'Hugo Santos', '1985-05-20', 965812187),
+    (23, 'Catarina Ferreira', '1998-11-10', 912331698),
+    (24, 'Ricardo Oliveira', '1979-03-25', 917688821),
+    (25, 'Inês Martins', '1987-09-02', 968137532),
+    (26, 'Carlos Almeida', '1995-07-14', 916003119),
+    (27, 'Sofia Pereira', '1980-12-30', 911203997),
     (28, 'Miguel Costa', '1993-04-05', 967876543),
     (29, 'Ana Mendes', '1982-06-18', 933456789),
-    (30, 'Diogo Santos', '1997-01-22', 978987654);
+    (30, 'Diogo Santos', '1997-01-22', 918987654);
 
 -- Inserir dados na tabela Cliente
 INSERT INTO Cliente (idCliente, idPessoa)
