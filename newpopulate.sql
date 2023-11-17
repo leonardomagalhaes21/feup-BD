@@ -30,7 +30,27 @@ VALUES
     (27, 'Sofia Pereira', '1980-12-30', 911203997),
     (28, 'Miguel Costa', '1993-04-05', 967876543),
     (29, 'Ana Mendes', '1982-06-18', 933456789),
-    (30, 'Diogo Santos', '1997-01-22', 918987654);
+    (30, 'Diogo Santos', '1997-01-22', 918987654)
+    (31, 'Patrícia Silva', '1991-02-28', 925678341),
+    (32, 'Daniel Costa', '1986-07-12', 968765123),
+    (33, 'Mariana Santos', '1994-09-22', 911234567),
+    (34, 'Rui Oliveira', '1989-04-15', 926543210),
+    (35, 'Sara Pereira', '1984-11-08', 917890123),
+    (36, 'Gonçalo Almeida', '1997-06-05', 925432109),
+    (37, 'Ana Martins', '1983-10-20', 965432189),
+    (38, 'Bruno Costa', '1999-03-30', 918765432),
+    (39, 'Teresa Ferreira', '1996-08-15', 937654321),
+    (40, 'David Oliveira', '1986-05-18', 966543210),
+    (41, 'Rita Mendes', '1992-09-10', 918765432),
+    (42, 'Paulo Silva', '1981-12-25', 911234567),
+    (43, 'Andreia Alves', '1993-07-30', 916543210),
+    (44, 'Hélder Rodrigues', '1977-04-14', 917890123),
+    (45, 'Vanessa Sousa', '1988-08-02', 935678901),
+    (46, 'Nuno Pereira', '1995-11-18', 916789012),
+    (47, 'Liliana Oliveira', '1982-06-24', 913456789),
+    (48, 'Alexandre Costa', '1976-01-28', 911223344),
+    (49, 'Carolina Silva', '1990-10-05', 917890123),
+    (50, 'José Almeida', '1984-03-17', 965432109);
 
 -- Inserir dados na tabela Cliente
 INSERT INTO Cliente (idCliente, idPessoa)
@@ -64,7 +84,17 @@ VALUES
     (27, 27),
     (28, 28),
     (29, 29),
-    (30, 30);
+    (30, 30)
+    (31, 31),
+    (32, 32),
+    (33, 33),
+    (34, 34),
+    (35, 35),
+    (36, 36),
+    (37, 37),
+    (38, 38),
+    (39, 39),
+    (40, 40);
 
 -- Inserir dados na tabela Vendedor
 INSERT INTO Vendedor (idVendedor, dataInicio, numVendas, salario, idPessoa)
