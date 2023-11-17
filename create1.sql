@@ -84,18 +84,18 @@ CREATE TABLE Representante (
 
 -- Associação entre Representante e Marca
 CREATE TABLE RepresentanteMarca (
-    PRIMARY KEY (idRepresentante, idMarca),
     idRepresentante    INTEGER,
     idMarca            INTEGER,
+    PRIMARY KEY (idRepresentante, idMarca),
     FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante),
     FOREIGN KEY (idMarca) REFERENCES Marca (idMarca)
 );
 
 -- Tabela RepresentanteVendedor
 CREATE TABLE RepresentanteVendedor (
-    PRIMARY KEY (idRepresentante, idVendedor),
     idRepresentante    INTEGER,
     idVendedor         INTEGER,
+    PRIMARY KEY (idRepresentante, idVendedor),
     FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante),
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor)
 );
