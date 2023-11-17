@@ -1,3 +1,6 @@
+PRAGMA	foreign_keys=ON;
+
+-- Popular
 -- Inserir dados na tabela Pessoa
 INSERT INTO Pessoa (idPessoa, nome, dataNascimento, telemovel)
 VALUES 
