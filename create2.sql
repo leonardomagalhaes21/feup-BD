@@ -57,8 +57,6 @@ CREATE TABLE Pagamento (
     metodoPagamento    TEXT,
     data               DATE,
     valor              DECIMAL,
-    idVenda            TEXT,
-    FOREIGN KEY (idVenda) REFERENCES Venda (idVenda) ON UPDATE CASCADE ON DELETE SET NULL,
     CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
 );
 
