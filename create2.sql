@@ -25,7 +25,7 @@ CREATE TABLE Pessoa (
 CREATE TABLE Cliente (
     idCliente          INTEGER NOT NULL PRIMARY KEY,
     idPessoa           INTEGER,
-    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE SET DEFAULT
+    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 -- Tabela Vendedor
@@ -58,7 +58,7 @@ CREATE TABLE Pagamento (
     data               DATE,
     valor              DECIMAL,
     idVenda            TEXT,
-    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda) ON UPDATE CASCADE,
+    FOREIGN KEY (idVenda) REFERENCES Venda (idVenda) ON UPDATE CASCADE ON DELETE SET NULL,
     CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
 );
 
@@ -70,9 +70,9 @@ CREATE TABLE Venda (
     lucro              DECIMAL,
     idCliente          INTEGER DEFAULT 0,
     idVendedor         INTEGER,
-    idVeiculo          INTEGER,
+    matricula          TEXT,
     idPagamento        INTEGER,
-    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON UPDATE CASCADE ON DELETE SET DEFAULT,
+    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON UPDATE CASCADE ON DELETE SET NULL,
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE ON DELETE SET NULL,
     FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento) ON UPDATE CASCADE,
     FOREIGN KEY (matricula) REFERENCES Veiculo (matricula) ON UPDATE CASCADE,
@@ -109,18 +109,5 @@ CREATE TABLE RepresentanteVendedor (
     idVendedor         INTEGER,
     PRIMARY KEY (idRepresentante, idVendedor),
     FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante) ON UPDATE CASCADE,
-    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE ON DELETE CASCADE
 );
-
-
-
-
-
-
-
-
-
-    
-
-
-
