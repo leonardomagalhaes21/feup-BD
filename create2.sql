@@ -25,7 +25,7 @@ CREATE TABLE Pessoa (
 CREATE TABLE Cliente (
     idCliente          INTEGER NOT NULL PRIMARY KEY,
     idPessoa           INTEGER,
-    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa)
+    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE SET DEFAULT
 );
 
 -- Tabela Vendedor
@@ -35,7 +35,7 @@ CREATE TABLE Vendedor (
     numVendas          INTEGER,
     salario            DECIMAL,
     idPessoa           INTEGER,
-    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa)
+    FOREIGN KEY (idPessoa) REFERENCES Pessoa (idPessoa) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 -- Tabela Veiculo
@@ -46,7 +46,7 @@ CREATE TABLE Veiculo (
     garantia           INTEGER,
     modelo             TEXT,
     idMarca            INTEGER,
-    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca)
+    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca) ON UPDATE CASCADE
     CONSTRAINT Matricula_UNIQUE UNIQUE (matricula),
     CONSTRAINT rest_Matricula CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]')
 );
@@ -58,7 +58,7 @@ CREATE TABLE Pagamento (
     data               DATE,
     valor              DECIMAL,
     idVenda            TEXT,
-    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda),
+    FOREIGN KEY (idVenda) REFERENCES Venda (IdVenda) ON UPDATE CASCADE,
     CONSTRAINT IdPagamento_UNIQUE UNIQUE (idPagamento)
 );
 
@@ -72,10 +72,10 @@ CREATE TABLE Venda (
     idVendedor         INTEGER,
     idVeiculo          INTEGER,
     idPagamento        INTEGER,
-    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
-    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor),
-    FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento),
-    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo),
+    FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON UPDATE CASCADE ON DELETE SET DEFAULT,
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE ON DELETE SET NULL,
+    FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento) ON UPDATE CASCADE,
+    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo) ON UPDATE CASCADE,
     CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda)
 );
 
@@ -98,9 +98,9 @@ CREATE TABLE Representante (
 CREATE TABLE RepresentanteMarca (
     idRepresentante    INTEGER,
     idMarca            INTEGER,
-    PRIMARY KEY (idRepresentante, idMarca),
-    FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante),
-    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca)
+    PRIMARY KEY (idRepresentante, idMarca) ON UPDATE CASCADE,
+    FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante) ON UPDATE CASCADE,
+    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca) ON UPDATE CASCADE
 );
 
 -- Tabela RepresentanteVendedor
@@ -108,8 +108,8 @@ CREATE TABLE RepresentanteVendedor (
     idRepresentante    INTEGER,
     idVendedor         INTEGER,
     PRIMARY KEY (idRepresentante, idVendedor),
-    FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante),
-    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor)
+    FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante) ON UPDATE CASCADE,
+    FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE
 );
 
 
