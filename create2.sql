@@ -68,7 +68,7 @@ CREATE TABLE Venda (
     data               DATE,
     comissao           DECIMAL,
     lucro              DECIMAL,
-    idCliente          INTEGER,
+    idCliente          INTEGER DEFAULT 0,
     idVendedor         INTEGER,
     idVeiculo          INTEGER,
     idPagamento        INTEGER,
