@@ -46,7 +46,7 @@ CREATE TABLE Veiculo (
     garantia           INTEGER,
     modelo             TEXT,
     idMarca            INTEGER,
-    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca) ON UPDATE CASCADE
+    FOREIGN KEY (idMarca) REFERENCES Marca (idMarca) ON UPDATE CASCADE,
     CONSTRAINT Matricula_UNIQUE UNIQUE (matricula),
     CONSTRAINT rest_Matricula CHECK (matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[0-9][0-9]-[A-Z][A-Z]-[0-9][0-9]' OR matricula GLOB '[0-9][0-9]-[0-9][0-9]-[A-Z][A-Z]' OR matricula GLOB '[A-Z][A-Z]-[0-9][0-9]-[0-9][0-9]')
 );
@@ -75,7 +75,7 @@ CREATE TABLE Venda (
     FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente) ON UPDATE CASCADE ON DELETE SET DEFAULT,
     FOREIGN KEY (idVendedor) REFERENCES Vendedor (idVendedor) ON UPDATE CASCADE ON DELETE SET NULL,
     FOREIGN KEY (idPagamento) REFERENCES Pagamento (idPagamento) ON UPDATE CASCADE,
-    FOREIGN KEY (idVeiculo) REFERENCES Veiculo (idVeiculo) ON UPDATE CASCADE,
+    FOREIGN KEY (matricula) REFERENCES Veiculo (matricula) ON UPDATE CASCADE,
     CONSTRAINT IdVenda_UNIQUE UNIQUE (idVenda)
 );
 
