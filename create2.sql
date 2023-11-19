@@ -98,7 +98,7 @@ CREATE TABLE Representante (
 CREATE TABLE RepresentanteMarca (
     idRepresentante    INTEGER,
     idMarca            INTEGER,
-    PRIMARY KEY (idRepresentante, idMarca) ON UPDATE CASCADE,
+    PRIMARY KEY (idRepresentante, idMarca),
     FOREIGN KEY (idRepresentante) REFERENCES Representante (idRepresentante) ON UPDATE CASCADE,
     FOREIGN KEY (idMarca) REFERENCES Marca (idMarca) ON UPDATE CASCADE
 );
