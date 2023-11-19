@@ -37,11 +37,11 @@ VALUES
 -- Inserir dados na tabela Vendedor
 INSERT INTO Vendedor (idVendedor, dataInicio, numVendas, salario, idPessoa)
 VALUES
-    (1, '2023-01-10', 10, 5000.00, 1),
-    (2, '2023-05-20', 10, 4500.50, 2),
-    (3, '2023-08-15', 10, 4800.75, 3),
-    (4, '2023-03-02', 10, 5200.00, 4),
-    (5, '2023-06-18', 10, 4700.50, 5);
+    (1, '2023-01-10', 2, 5000.00, 1),
+    (2, '2023-05-20', 2, 4500.50, 2),
+    (3, '2023-08-15', 2, 4800.75, 3),
+    (4, '2023-03-02', 2, 5200.00, 4),
+    (5, '2023-06-18', 2, 4700.50, 5);
 
 -- Inserir dados na tabela Marca
 INSERT INTO Marca (idMarca, nomeMarca, pais, ano)
