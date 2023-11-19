@@ -1,3 +1,15 @@
+-- Drop tables if they exist
+DROP TABLE IF EXISTS Pessoa;
+DROP TABLE IF EXISTS Cliente;
+DROP TABLE IF EXISTS Vendedor;
+DROP TABLE IF EXISTS Venda;
+DROP TABLE IF EXISTS Veiculo;
+DROP TABLE IF EXISTS Pagamento;
+DROP TABLE IF EXISTS Marca;
+DROP TABLE IF EXISTS Representante;
+DROP TABLE IF EXISTS RepresentanteMarca;
+DROP TABLE IF EXISTS RepresentanteVendedor;
+
 -- Tabela Pessoa
 CREATE TABLE Pessoa (
     idPessoa           INTEGER NOT NULL PRIMARY KEY,
